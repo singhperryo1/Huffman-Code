@@ -7,6 +7,6 @@ Implementation of the algorithm (building the code and encoding the input) that 
 ## Programming Language Used
 * Java
 ## Future Enhancements 
-* The efficiency of encoding can be improved significantly to O(n*log(n)) by using a Heap structure to store the code from algorithm. 
+* The efficiency of encoding can be improved significantly to O(n*log(n)) by using a Heap structure to store the code built from algorithm. 
 ## Links
 * [LinkedIn Profile](https://www.linkedin.com/in/singhperry01/)
