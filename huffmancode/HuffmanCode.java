@@ -1,8 +1,5 @@
-/*
-Singh, Gagandeep
-Date: 05/08/19
- */
-package huffmancode;
+
+
 import java.util.Scanner ; 
 public class HuffmanCode {
 
@@ -16,20 +13,27 @@ public class HuffmanCode {
         System.out.println("Please enter your message here: ");   
         String message;                                               
         message = scan.nextLine();
+        if(message.isEmpty())
+        	System.exit(0);
     //-----------------------------------------------// 
-        LinkedList list = new LinkedList(); 
-        list.insertMsg(message);
-        list.display();           //displays char(s) of messge with frequency
+     
+       int[] asciiTable = new int[256]; //total number of character possible
+       for(int i = 0; i < message.length(); i++)
+       {
+    	   asciiTable[(int)message.charAt(i)]++;
+       }
+       
     //-----------------------------------------------//
-        PQT p1 =  new PQT();
-        LinkedList temp = list;
-        Tree test = new Tree(); 
+        MinPriorityQueue queue =  new MinPriorityQueue(); 
+        String[] codeTable = new String[256];
     //---------------------------------------------//
-        Encode go = new Encode();
-        go.makeHuffmanPQT(temp, p1);   //builds PQT with all tree root in it
-        p1.displayPq();               
-        go.makeHuffmanTree(p1, test); 
-        go.buildCodeTable("",test.getRoot()); //contains huffman codes of char 
-        go.printHuffmanCode(message);  
+          Encode.makeHuffmanPQT(asciiTable, queue);   //builds MinPriorityQueue with all tree root in it           
+          Encode.makeHuffmanTree(queue); 
+          Encode.buildCodeTable(codeTable,queue.fetchStart().getRoot(),""); //contains huffman codes of char 
+          
+          System.out.println(" Your Huffman code is : ");
+          Encode.codeIt(message, codeTable);  
 }
+
+	
 }

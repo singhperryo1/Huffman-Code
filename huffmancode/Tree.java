@@ -2,7 +2,7 @@
 Singh, Gagandeep
 Date: 05/08/19
  */
-package huffmancode;
+
 /**
  *
  * @author Singh Gagan
