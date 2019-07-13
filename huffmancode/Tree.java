@@ -1,8 +1,10 @@
 /*
 Singh, Gagandeep
 Date: 05/08/19
+
+Singh, Chahatpreet
  */
-package huffmancode;
+
 /**
  *
  * @author Singh Gagan

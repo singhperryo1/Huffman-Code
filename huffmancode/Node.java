@@ -2,7 +2,7 @@
 Singh, Gagandeep
 Date: 05/08/19
  */
-package huffmancode;
+
 
 /**
  *
@@ -20,7 +20,8 @@ public class Node {
         frequency = 0 ; 
         next = null ; 
         left = null; 
-        right = null; 
+        right = null;
+        letter = 0;
     }
     
     //setters and getters 
@@ -64,11 +65,7 @@ public class Node {
     {
         return right; 
     }
-    public void nodeFromListH(LinkedList a) //recieves a linked list
-    {                                       //put head data fields into node
-     setChar(a.getHead().getLetter());
-     setFrequency(a.getHead().getFrequency()); 
-    }
+    
     public void displayFields()
     {
         System.out.println("Character"+"        "+"Frequency"); 
